@@ -1,0 +1,29 @@
+/*!
+ * Start Bootstrap - Blog Home (https://startbootstrap.com/template-overviews/blog-home)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+  background-color: gray;
+
+}
+#to-center{
+  text-align: center;
+}
+#text-right{
+  text-align: right;
+}
+.card-inner{
+  margin-left: 4rem;
+}
+.text-right{
+   text-align: right;
+ }
+.text-center{
+  text-align: right;
+}
+.green{
+  color: green;
+  font-size: smaller;
+}
