@@ -55,111 +55,74 @@
 
 <!-- Sidebar Widgets Column -->
 <div id="to-center" class="col-md-4">
-<form action="{{route('search.post')}}" method="post">
-    {!! csrf_field() !!}
-<!-- Search Widget -->
-<div class="card my-4">
-<h5 class="card-header">جستجو</h5>
-<div class="card-body">
-<div class="input-group">
 
-<input name="keyword" type="text" class="form-control" placeholder="جستجو کن">
-<span class="input-group-btn">
-<button class="btn btn-secondary" type="submit">! برو </button>
-</form>
-</span>
+
+<div class="card mt-4">
+    <h5 class="card-header bg-success">جستجو</h5>
+    <div class="card-body">
+
+        <form class="m-0" action="{{route('search.post')}}" method="post">
+        {!! csrf_field() !!}
+        <!-- Search Widget -->
+
+
+
+                    <div class="input-group">
+
+                        <input name="keyword" type="text" class="form-control" placeholder="جستجو کن">
+                        <span class="input-group-btn">
+                        </span>
+                    </div>
+
+            <button class="btn btn-secondary" type="submit">! برو </button>
+        </form>
 
 
 </div>
 </div>
-</div>
+
 
 <!-- Categories Widget -->
 <div id="to-center" class="card my-4">
-<h5 class="card-header">دسته بندی | (      <a class="green" href="{{route('category.form.get')}}">اضافه کردن تگ</a>)   </h5>
-<div class="card-body">
-<div class="row">
-<div class="col-lg-6">
-
-   <ul class="list-unstyled mb-0">
-       @foreach($category as $categor)
-       <li >
-           <a href="{{route('article.filtercategory.get',['id'=>$categor->name])}}">{{$categor->name}}</a>
-       </li>
-       @endforeach
-
-
-   </ul>
 
 </div>
 
-<div class="col-lg-6">
-   <ul class="list-unstyled mb-0">
+<div class="card bg-primary" >
 
-   </ul>
-</div>
-</div>
-</div>
-</div>
+        <h5 class="card-header">دسته بندی | (      <a class="green" href="{{route('category.form.get')}}">اضافه کردن تگ</a>)   </h5>
 
 
+    <ul class="list-group">
+        @foreach($category as $categor)
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="{{route('article.filtercategory.get',['id'=>$categor->name])}}" class="badge badge-primary badge-pill">5</a>
+            <a href="{{route('article.filtercategory.get',['id'=>$categor->name])}}" class=" ">{{$categor->name}}</a>
 
-    <div id="to-center" class="card my-4">
+        </li>
+        @endforeach
+    </ul>
+</div>
+
+
+    <div class="card bg-warning mt-3" >
+
         <h5 class="card-header">نویسندگان</h5>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-lg-6 ">
-                    <ul class="list-unstyled mb-0 text-center">
-                        @foreach($writers as $writer)
-                            <li class="text-center">
-                                <a href="{{route('article.filterwriter.get',["id"=>$writer->id])}}">{{$writer->name}}</a>
-                            </li>
-                        @endforeach
 
-                    </ul>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-unstyled mb-0">
 
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <ul class="list-group">
+            @foreach($writers as $writer)
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{{route('article.filtercategory.get',['id'=>$categor->name])}}" class="badge badge-warning badge-pill">5</a>
+                    <a href="{{route('article.filterwriter.get',["id"=>$writer->id])}}" class="badge badge-warning badge-pill">{{$writer->name}}</a>
+
+
+                </li>
+            @endforeach
+        </ul>
     </div>
 
-    <div id="to-center" class="card my-4">
-        <h5 class="card-header">  آرشیو</h5>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-lg-6">
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#">Web Design</a>
-                        </li>
-                        <li>
-                            <a href="#">HTML</a>
-                        </li>
-                        <li>
-                            <a href="#">Freebies</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#">JavaScript</a>
-                        </li>
-                        <li>
-                            <a href="#">CSS</a>
-                        </li>
-                        <li>
-                            <a href="#">Tutorials</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
 
 
 
